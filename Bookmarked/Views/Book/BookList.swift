@@ -22,7 +22,7 @@ struct BookList: View {
                 } else {
                     ScrollView {
                         LazyHStack(alignment: .center) {
-                            LazyVStack(alignment: .leading, spacing: 10) {
+                            VStack(alignment: .leading, spacing: 10) {
                                 ForEach(books.chunked(into: 3), id: \.self) { chunk in
                                     LazyHStack(spacing: 30) {
                                         ForEach(chunk, id: \.self) { book in
@@ -43,11 +43,13 @@ struct BookList: View {
                                         }
                                     }
                                 }
-                                .padding(.horizontal)
+                                .padding(.horizontal, 35)
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom)
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }

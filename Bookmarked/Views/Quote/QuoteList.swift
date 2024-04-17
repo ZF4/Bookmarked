@@ -28,7 +28,6 @@ struct QuoteList: View {
                         ContentUnavailableView("Add your first quote", systemImage: "quote.opening")
                             .background(Color("backgroundColor").ignoresSafeArea())
                     } else {
-                        
                         List {
                             ForEach(sortedQuote) { quote in
                                 NavigationLink {
@@ -57,7 +56,6 @@ struct QuoteList: View {
                                     }
                                 }
                             })
-                            
                         }
                         .background(Color("backgroundColor"))
                         .scrollContentBackground(.hidden)

@@ -66,7 +66,7 @@ struct APISearch: View {
                         .sheet(isPresented: $createNewBook) {
                             AddBook()
                                 .environment(\.presentations, presentations + [$createNewBook])
-                                .presentationDetents([.medium])
+                                .presentationDetents([.large])
                         }
                     }
                 }

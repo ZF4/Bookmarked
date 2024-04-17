@@ -13,9 +13,9 @@ extension BookModel {
     static var sampleBooks: [BookModel] {
         [
             BookModel(title: "Book 1", author: "Author 1"),
-            BookModel(title: "Book 2", author: "Author 2"),
-            BookModel(title: "Book 3", author: "Author 3"),
-            BookModel(title: "Book 4", author: "Author 4"),
+            BookModel(title: "Book 2", author: "Author 2")
+//            BookModel(title: "Book 3", author: "Author 3"),
+//            BookModel(title: "Book 4", author: "Author 4"),
         ]
     }
 }
