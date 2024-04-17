@@ -20,8 +20,8 @@ struct AddQuote: View {
     var book: BookModel
     var body: some View {
         ZStack {
-            Color("addBackgroundColor")
-                .ignoresSafeArea()
+//            Color("addBackgroundColor")
+//                .ignoresSafeArea()
             
             VStack {
                 VStack(alignment: .leading) {
@@ -43,7 +43,7 @@ struct AddQuote: View {
                     }
                     .padding()
                     .background(
-                        RoundedRectangle(cornerRadius: 30).fill(Color("backgroundColor"))
+                        RoundedRectangle(cornerRadius: 30).fill(Color("altBackgroundColor"))
                             .softInnerShadow(RoundedRectangle(cornerRadius: 30), darkShadow: Color.black.opacity(0.5), lightShadow: Color.black.opacity(0.2), spread: 0.05, radius: 2)
                     )
                 }

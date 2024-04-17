@@ -34,12 +34,14 @@ struct QuoteList: View {
                                 NavigationLink {
                                     SingleQuoteView(quote: quote, book: book)
                                 } label: {
-                                    QuotesView(quote: quote)
-                                        .onTapGesture {
-                                            selectedQuote = quote
-                                            text = quote.text
-                                            page = quote.pageNum
-                                        }
+                                    Button {
+                                        selectedQuote = quote
+                                        text = quote.text
+                                        page = quote.pageNum
+                                    } label: {
+                                        QuotesView(quote: quote)
+                                    }
+
                                 }
                                 .listRowBackground(Color("addBackgroundColor"))
                             }
@@ -68,7 +70,6 @@ struct QuoteList: View {
                         .presentationDetents([.medium])
                 }
             }
-//            .toolbarRole(.editor)
             .toolbar {
                 Button {
                     createNewQuote = true

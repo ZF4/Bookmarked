@@ -10,9 +10,18 @@ import SwiftData
 
 @Model
 class BookModel: Identifiable {
+    
+    enum ImageType: String, Codable {
+        case apiImage
+        case galleryImage
+    }
+    
     var id: String
     var title: String
     var author: String
+    var webImage: String?
+    var imageType: ImageType?
+    
     
     @Attribute(.externalStorage)
     var imageData: Data? = nil
@@ -20,10 +29,12 @@ class BookModel: Identifiable {
     @Relationship(deleteRule: .cascade)
     var quotes: [QuoteModel]?
     
-    init(id: String = UUID().uuidString, title: String = "", author: String = "", pngData: Data? = nil) {
+    init(id: String = UUID().uuidString, title: String = "", author: String = "", pngData: Data? = nil, webImage: String? = nil, imageType: ImageType = .apiImage) {
         self.id = id
         self.title = title
         self.author = author
         self.imageData = pngData
+        self.webImage = webImage
+        self.imageType = imageType
     }
 }

@@ -66,7 +66,7 @@ struct NoBooks: View {
     var body: some View {
         VStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 20).fill(Color("BackgroundColor")).softInnerShadow(RoundedRectangle(cornerRadius: 20), darkShadow:  Color.black.opacity(0.5), lightShadow: Color.black.opacity(0.3), spread: 0.1)
+                RoundedRectangle(cornerRadius: 20).fill(Color("backgroundColor")).softInnerShadow(RoundedRectangle(cornerRadius: 20), darkShadow:  Color.black.opacity(0.5), lightShadow: Color.black.opacity(0.3), spread: 0.1)
                 
                 Text("No quotes found")
                     .foregroundStyle(Color("textColor").opacity(0.3))

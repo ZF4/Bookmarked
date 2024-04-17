@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TipKit
 
 @main
 struct BookmarkedApp: App {
@@ -15,6 +16,13 @@ struct BookmarkedApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+                    .task {
+                        try? Tips.resetDatastore()
+                        try? Tips.configure([
+//                            .displayFrequency(.immediate)
+                            .datastoreLocation(.applicationDefault)
+                        ])
+                    }
             }
             .modelContainer(container)
         }

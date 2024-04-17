@@ -28,8 +28,13 @@
 		9FB789D42B97849C0083AE9A /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB789D32B97849C0083AE9A /* PreviewContainer.swift */; };
 		9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB789D52B9784EB0083AE9A /* BookSamples.swift */; };
 		9FD265012B8FAD850004687B /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD265002B8FAD850004687B /* QuoteModel.swift */; };
+		9FD791932BD0153C00E64DC7 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD791922BD0153C00E64DC7 /* Tips.swift */; };
 		9FDBB30C2B3CBADD0021CFBE /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */; };
 		9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */; };
+		9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */; };
+		9FEDEBC32BCB7BE300117289 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC22BCB7BE300117289 /* WebService.swift */; };
+		9FEDEBC62BCB7C1F00117289 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */; };
+		9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC82BCCC1A800117289 /* APISearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +60,12 @@
 		9FB789D32B97849C0083AE9A /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		9FB789D52B9784EB0083AE9A /* BookSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSamples.swift; sourceTree = "<group>"; };
 		9FD265002B8FAD850004687B /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		9FD791922BD0153C00E64DC7 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
+		9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksApIResponse.swift; sourceTree = "<group>"; };
+		9FEDEBC22BCB7BE300117289 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		9FEDEBC82BCCC1A800117289 /* APISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEDEBC62BCB7C1F00117289 /* SwiftyJSON in Frameworks */,
 				9FA1D2D92BAA1127006E69BC /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +112,7 @@
 				9F5A81652AF00496005B6921 /* BookmarkedApp.swift */,
 				9F5A81672AF00496005B6921 /* ContentView.swift */,
 				9FA1D2D52BA89E25006E69BC /* Extensions.swift */,
+				9FD791922BD0153C00E64DC7 /* Tips.swift */,
 				9F5E4CF52AF01911005223A1 /* Utilities */,
 				9F5A81752AF004CD005B6921 /* Models */,
 				9F5A81692AF00498005B6921 /* Assets.xcassets */,
@@ -126,6 +137,7 @@
 			children = (
 				9F5E4CF02AF011AB005223A1 /* BookModel.swift */,
 				9FD265002B8FAD850004687B /* QuoteModel.swift */,
+				9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +145,7 @@
 		9F5E4CF22AF0124A005223A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9FEDEBC72BCCC18E00117289 /* API Search */,
 				9F0642AA2BAF354F002FDE55 /* Feature */,
 				9F83BF5A2B27A5C20093E923 /* AddNew */,
 				9F8E7CA42AF16F8800790438 /* Quote */,
@@ -146,6 +159,7 @@
 			children = (
 				9F5E4CF62AF0191F005223A1 /* CustomFonts */,
 				9F5E4D1C2AF04816005223A1 /* TextAlignment.swift */,
+				9FEDEBC22BCB7BE300117289 /* WebService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -189,6 +203,14 @@
 			path = Quote;
 			sourceTree = "<group>";
 		};
+		9FEDEBC72BCCC18E00117289 /* API Search */ = {
+			isa = PBXGroup;
+			children = (
+				9FEDEBC82BCCC1A800117289 /* APISearch.swift */,
+			);
+			path = "API Search";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +229,7 @@
 			name = Bookmarked;
 			packageProductDependencies = (
 				9FA1D2D82BAA1127006E69BC /* Neumorphic */,
+				9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */,
 			);
 			productName = Bookmarked;
 			productReference = 9F5A81622AF00496005B6921 /* Bookmarked.app */;
@@ -238,6 +261,7 @@
 			mainGroup = 9F5A81592AF00496005B6921;
 			packageReferences = (
 				9FA1D2D72BAA1127006E69BC /* XCRemoteSwiftPackageReference "neumorphic" */,
+				9FEDEBC42BCB7C1F00117289 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 9F5A81632AF00496005B6921 /* Products */;
 			projectDirPath = "";
@@ -270,14 +294,18 @@
 			files = (
 				9F83BF5C2B27A5E70093E923 /* AddQuote.swift in Sources */,
 				9F8E7CA62AF1701600790438 /* BookList.swift in Sources */,
+				9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */,
 				9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */,
 				9F5E4D1F2AF0576A005223A1 /* BookView.swift in Sources */,
 				9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */,
+				9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */,
 				9FD265012B8FAD850004687B /* QuoteModel.swift in Sources */,
 				9F5E4CF12AF011AB005223A1 /* BookModel.swift in Sources */,
 				9F5E4CF42AF0127E005223A1 /* SingleQuoteView.swift in Sources */,
 				9FB789D42B97849C0083AE9A /* PreviewContainer.swift in Sources */,
+				9FD791932BD0153C00E64DC7 /* Tips.swift in Sources */,
 				9F5A81682AF00496005B6921 /* ContentView.swift in Sources */,
+				9FEDEBC32BCB7BE300117289 /* WebService.swift in Sources */,
 				9F5E4D1D2AF04816005223A1 /* TextAlignment.swift in Sources */,
 				9FA1D2D62BA89E25006E69BC /* Extensions.swift in Sources */,
 				9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */,
@@ -506,6 +534,14 @@
 				kind = branch;
 			};
 		};
+		9FEDEBC42BCB7C1F00117289 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -513,6 +549,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9FA1D2D72BAA1127006E69BC /* XCRemoteSwiftPackageReference "neumorphic" */;
 			productName = Neumorphic;
+		};
+		9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FEDEBC42BCB7C1F00117289 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

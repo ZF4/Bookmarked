@@ -8,10 +8,11 @@
 import SwiftUI
 import SwiftData
 import PhotosUI
+import TipKit
 
 struct AddBook: View {
-    @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
+    @Environment(\.presentations) private var presentations
     @State var title: String = ""
     @State var buttonEnabled = false
     @State var author: String = ""
@@ -19,8 +20,8 @@ struct AddBook: View {
     
     var body: some View {
         ZStack {
-            Color("addBackgroundColor")
-                .ignoresSafeArea()
+//            Color("addBackgroundColor")
+//                .ignoresSafeArea()
             
             VStack {
                 VStack(alignment: .leading) {
@@ -33,7 +34,7 @@ struct AddBook: View {
                                     .padding()
                             }
                             .background(
-                                RoundedRectangle(cornerRadius: 30).fill(Color("backgroundColor"))
+                                RoundedRectangle(cornerRadius: 30).fill(Color("altBackgroundColor"))
                                     .softInnerShadow(RoundedRectangle(cornerRadius: 30), darkShadow: Color.black.opacity(0.5), lightShadow: Color.black.opacity(0.2), spread: 0.05, radius: 2)
                             )
                             
@@ -42,7 +43,7 @@ struct AddBook: View {
                                     .padding()
                             }
                             .background(
-                                RoundedRectangle(cornerRadius: 30).fill(Color("backgroundColor"))
+                                RoundedRectangle(cornerRadius: 30).fill(Color("altBackgroundColor"))
                                     .softInnerShadow(RoundedRectangle(cornerRadius: 30), darkShadow: Color.black.opacity(0.5), lightShadow: Color.black.opacity(0.2), spread: 0.05, radius: 2)
                             )
                             
@@ -51,7 +52,11 @@ struct AddBook: View {
                 }
                 .padding(.bottom)
                 
-                Button(action: addBook, label: {
+                Button(action: {
+                    addBook()
+                    Task { await DeleteBookTip.setDeleteBookEvent.donate() }
+                    
+                } , label: {
                     Text("Save")
                         .frame(width: 200)
                         .foregroundStyle(Color("buttonTextColor"))
@@ -65,9 +70,11 @@ struct AddBook: View {
     }
     
     func addBook() {
-        let newBook = BookModel(title: title, author: author, pngData: selectedPhotoData?.jpegData(compressionQuality: 1.0))
+        let newBook = BookModel(title: title, author: author, pngData: selectedPhotoData?.jpegData(compressionQuality: 1.0), imageType: .galleryImage)
         modelContext.insert(newBook)
-        dismiss()
+        presentations.forEach {
+            $0.wrappedValue = false
+        }
     }
 }
 

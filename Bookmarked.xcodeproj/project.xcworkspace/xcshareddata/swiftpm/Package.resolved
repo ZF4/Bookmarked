@@ -8,6 +8,15 @@
         "branch" : "master",
         "revision" : "03c6f7b3d27bfb28a082db2e9ffae45fbc69cb8b"
       }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
+      "state" : {
+        "revision" : "af76cf3ef710b6ca5f8c05f3a31307d44a3c5828",
+        "version" : "5.0.2"
+      }
     }
   ],
   "version" : 2

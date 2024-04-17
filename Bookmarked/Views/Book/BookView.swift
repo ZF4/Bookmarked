@@ -8,13 +8,14 @@
 import SwiftUI
 import SwiftData
 import Neumorphic
+import WebKit
 
 struct BookView: View {
     var book: BookModel
     var body: some View {
         VStack(alignment: .leading) {
             Group {
-                if book.imageData == nil {
+                if (book.imageData == nil) && book.webImage == nil {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
                             .frame(width: 100, height: 140)
@@ -32,7 +33,7 @@ struct BookView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     
-                } else {
+                } else if book.imageType == .galleryImage {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
                             .frame(width: 100, height: 140)
@@ -45,6 +46,22 @@ struct BookView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
                     }
+                } else if book.imageType == .apiImage {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
+                            .frame(width: 100, height: 140)
+                        
+                        AsyncImage(url: URL(string: book.webImage ?? ""), content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 100, height: 140)
+                                .background(Color.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }, placeholder: {
+                            ProgressView()
+                        })
+                        
+                    }
                 }
             }
             
@@ -53,13 +70,13 @@ struct BookView: View {
                     .fontWeight(.black)
                     .font(.system(size: 16))
                     .minimumScaleFactor(0.5)
-                    .lineLimit(2)
+                    .lineLimit(1)
                 
                 Text(book.author)
                     .font(.system(size: 15))
                     .font(.caption)
                     .minimumScaleFactor(0.5)
-                    .lineLimit(2)
+                    .lineLimit(1)
             }
         }
         .frame(width: 100)
