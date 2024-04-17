@@ -12,13 +12,17 @@ import WebKit
 
 struct BookView: View {
     var book: BookModel
+    var height: CGFloat = 140
+    var width: CGFloat = 100
+    var showText: Bool = true
+    
     var body: some View {
         VStack(alignment: .leading) {
             Group {
                 if (book.imageData == nil) && book.webImage == nil {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
-                            .frame(width: 100, height: 140)
+                            .frame(width: width, height: height)
                         
                         VStack {
                             Image(systemName: "exclamationmark.magnifyingglass")
@@ -28,7 +32,7 @@ struct BookView: View {
                             Text("No image")
                                 .foregroundStyle(Color.black)
                         }
-                        .frame(width: 100, height: 140)
+                        .frame(width: width, height: height)
                         .background(Color.white.opacity(0.9))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
@@ -36,12 +40,12 @@ struct BookView: View {
                 } else if book.imageType == .galleryImage {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
-                            .frame(width: 100, height: 140)
+                            .frame(width: width, height: height)
                         
                         Image(uiImage: UIImage(loadingDataFrom: book) ?? UIImage())
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 140)
+                            .frame(width: width, height: height)
                             .background(Color.white)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
@@ -49,12 +53,12 @@ struct BookView: View {
                 } else if book.imageType == .apiImage {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
-                            .frame(width: 100, height: 140)
+                            .frame(width: width, height: height)
                         
                         AsyncImage(url: URL(string: book.webImage ?? ""), content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 100, height: 140)
+                                .frame(width: width, height: height)
                                 .background(Color.white)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }, placeholder: {
@@ -65,21 +69,24 @@ struct BookView: View {
                 }
             }
             
-            VStack(alignment: .leading) {
-                Text(book.title)
-                    .fontWeight(.black)
-                    .font(.system(size: 16))
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
+            if showText {
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                        .fontWeight(.black)
+                        .font(.system(size: 16))
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                    
+                    Text(book.author)
+                        .font(.system(size: 15))
+                        .font(.caption)
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                }
                 
-                Text(book.author)
-                    .font(.system(size: 15))
-                    .font(.caption)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
             }
         }
-        .frame(width: 100)
+        .frame(width: width)
     }
 }
 

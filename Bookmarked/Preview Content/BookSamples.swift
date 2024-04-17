@@ -23,11 +23,11 @@ extension BookModel {
 extension QuoteModel {
     static var sampleQuotes: [QuoteModel] {
         [
-        QuoteModel(quote: "Quote 1", pageNum: "1"),
-        QuoteModel(quote: "Quote 2", pageNum: "2"),
-        QuoteModel(quote: "Quote 3", pageNum: "3"),
-        QuoteModel(quote: "Quote 4", pageNum: "4"),
-        QuoteModel(quote: "Quote 5", pageNum: "5"),
+        QuoteModel(quote: "Quote 1", pageNum: "12"),
+        QuoteModel(quote: "Quote 2", pageNum: "21"),
+        QuoteModel(quote: "Quote 3", pageNum: "33"),
+        QuoteModel(quote: "Quote 4", pageNum: "44"),
+        QuoteModel(quote: "Quote 5", pageNum: "25"),
         ]
     }
 }

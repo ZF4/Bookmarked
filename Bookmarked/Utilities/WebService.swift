@@ -23,7 +23,7 @@ class WebService {
         var fetchedBooks: [BookModel] = []
         for item in result.items {
             let volumeInfo = item.volumeInfo
-            let imgUrl = item.volumeInfo.imageLinks?.smallThumbnail
+//            let imgUrl = item.volumeInfo.imageLinks?.smallThumbnail
             var author = ""
             for i in item.volumeInfo.authors?.first ?? "" {
                 author += "\(i)"
