@@ -29,6 +29,7 @@
 		9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB789D52B9784EB0083AE9A /* BookSamples.swift */; };
 		9FD265012B8FAD850004687B /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD265002B8FAD850004687B /* QuoteModel.swift */; };
 		9FD791932BD0153C00E64DC7 /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD791922BD0153C00E64DC7 /* Tips.swift */; };
+		9FD791952BD0324F00E64DC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD791942BD0324F00E64DC7 /* Constants.swift */; };
 		9FDBB30C2B3CBADD0021CFBE /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */; };
 		9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */; };
 		9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */; };
@@ -61,6 +62,7 @@
 		9FB789D52B9784EB0083AE9A /* BookSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSamples.swift; sourceTree = "<group>"; };
 		9FD265002B8FAD850004687B /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		9FD791922BD0153C00E64DC7 /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
+		9FD791942BD0324F00E64DC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
 		9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksApIResponse.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				9F5A81652AF00496005B6921 /* BookmarkedApp.swift */,
 				9F5A81672AF00496005B6921 /* ContentView.swift */,
 				9FA1D2D52BA89E25006E69BC /* Extensions.swift */,
+				9FD791942BD0324F00E64DC7 /* Constants.swift */,
 				9FD791922BD0153C00E64DC7 /* Tips.swift */,
 				9F5E4CF52AF01911005223A1 /* Utilities */,
 				9F5A81752AF004CD005B6921 /* Models */,
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F83BF5C2B27A5E70093E923 /* AddQuote.swift in Sources */,
+				9FD791952BD0324F00E64DC7 /* Constants.swift in Sources */,
 				9F8E7CA62AF1701600790438 /* BookList.swift in Sources */,
 				9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */,
 				9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */,

@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class WebService {
     func fetchBooks(bookTitle: String) async throws -> [BookModel] {
-        let key = "AIzaSyAndRKo_fhMxfVdD9USct0fNUsgDzVAnBE"
+        let key = googleBookApiKey
         let urlString = "https://www.googleapis.com/books/v1/volumes?q=\(bookTitle)+inTitle:\(bookTitle)&key=\(key)&maxResults=6"
         guard let url = URL(string: urlString) else {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
