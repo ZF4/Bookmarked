@@ -23,6 +23,7 @@ struct DropDownView: View {
             VStack {
                 HStack {
                     Text(bookStatus ?? prompt)
+                        .foregroundStyle(Color.black)
                     
                     Spacer()
                     
@@ -32,7 +33,7 @@ struct DropDownView: View {
                         .rotationEffect(.degrees(isExpanded ? 180 : 0))
                 }
                 .frame(height: 40)
-                .background(scheme == .dark ? Color.black : Color.white)
+                .background(Color.white)
                 .padding(.horizontal)
                 .onAppear {
                     if let book {
@@ -47,7 +48,7 @@ struct DropDownView: View {
                         ForEach(options, id: \.self) { status in
                             HStack {
                                 Text(status)
-                                    .foregroundStyle(bookStatus == status ? Color.primary : Color.gray)
+                                    .foregroundStyle(bookStatus == status ? Color.black : Color.gray)
                                 
                                 Spacer()
                                 
@@ -70,9 +71,9 @@ struct DropDownView: View {
                     .transition(.move(edge: .bottom))
                 }
             }
-            .background(scheme == .dark ? Color.black : Color.white)
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .shadow(color: Color.primary.opacity(0.2), radius: 4)
+            .shadow(color: scheme == .dark ? Color.white.opacity(0.2) : Color.black.opacity(0.2), radius: 4)
             .frame(width: 160)
         }
     }

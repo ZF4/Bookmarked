@@ -30,18 +30,19 @@ struct QuoteList: View {
                         VStack(alignment: .leading) {
                             Text(book.title)
                                 .font(.system(size: 20))
-                                .frame(width: 200, alignment: .leading)
                                 .lineLimit(2)
+                                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                                 .bold()
                             Text(book.author)
                                 .font(.system(size: 15))
                                 .fontWeight(.light)
                                 .padding(.bottom, 5)
-                            Rating(book: book)
                             
                             Spacer()
+                            
+                            Rating(book: book)
                         }
-                        .frame(height: 100)
+                        .frame(height: 90)
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -101,7 +102,7 @@ struct QuoteList: View {
         }
         .overlay(alignment: .top) {
             DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Select")
-                .offset(x: -10, y: 85)
+                .offset(x: -10, y: 100)
         }
     }
 }
