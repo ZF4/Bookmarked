@@ -13,6 +13,7 @@ struct QuoteList: View {
     @State private var text = ""
     @State private var page = ""
     @State var selectedQuote: QuoteModel?
+    @State var selectedStatus: String?
     @State var createNewQuote = false
     let book: BookModel
     
@@ -23,6 +24,29 @@ struct QuoteList: View {
                 .ignoresSafeArea()
             
             NavigationStack {
+                VStack(alignment: .leading) {
+                    HStack(alignment: .top) {
+                        BookView(book: book, showText: false)
+                        VStack(alignment: .leading) {
+                            Text(book.title)
+                                .font(.system(size: 20))
+                                .frame(width: 200, alignment: .leading)
+                                .lineLimit(2)
+                                .bold()
+                            Text(book.author)
+                                .font(.system(size: 15))
+                                .fontWeight(.light)
+                                .padding(.bottom, 5)
+                            Rating(book: book)
+                            
+                            Spacer()
+                        }
+                        .frame(height: 100)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                
                 Group {
                     if sortedQuote.isEmpty {
                         ContentUnavailableView("Add your first quote", systemImage: "quote.opening")
@@ -61,7 +85,6 @@ struct QuoteList: View {
                         .scrollContentBackground(.hidden)
                     }
                 }
-                .navigationTitle(book.title)
                 .background(Color("backgroundColor"))
                 .sheet(isPresented: $createNewQuote) {
                     AddQuote(book: book)
@@ -75,6 +98,10 @@ struct QuoteList: View {
                     Image(systemName: "plus")
                 }
             }
+        }
+        .overlay(alignment: .top) {
+            DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Select")
+                .offset(x: -10, y: 85)
         }
     }
 }

@@ -21,6 +21,8 @@ class BookModel: Identifiable {
     var author: String
     var webImage: String?
     var imageType: ImageType?
+    var bookStatus: String?
+    var rating: Int?
     
     
     @Attribute(.externalStorage)
@@ -29,12 +31,14 @@ class BookModel: Identifiable {
     @Relationship(deleteRule: .cascade)
     var quotes: [QuoteModel]?
     
-    init(id: String = UUID().uuidString, title: String = "", author: String = "", pngData: Data? = nil, webImage: String? = nil, imageType: ImageType = .apiImage) {
+    init(id: String = UUID().uuidString, title: String = "", author: String = "", pngData: Data? = nil, webImage: String? = nil, imageType: ImageType = .apiImage, bookStatus: String? = nil, rating: Int? = nil) {
         self.id = id
         self.title = title
         self.author = author
         self.imageData = pngData
         self.webImage = webImage
         self.imageType = imageType
+        self.bookStatus = bookStatus
+        self.rating = rating
     }
 }
