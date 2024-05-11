@@ -16,7 +16,7 @@ struct SingleQuoteView: View {
         
         NavigationStack {
             ZStack(alignment: .top) {
-                Image(.pageOne)
+                Image(.newPage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()

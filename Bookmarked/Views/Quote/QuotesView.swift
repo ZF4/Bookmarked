@@ -12,14 +12,15 @@ struct QuotesView: View {
     var quote: QuoteModel
     var body: some View {
         ZStack {
-            Color("addBackgroundColor")
+            //Change this for list BG color
+            Color("backgroundColor")
                 .ignoresSafeArea()
             HStack {
                 VStack(alignment: .leading) {
                     //Book page
                     Text("pg. \(quote.pageNum)")
                         .font(Font.custom("Baskerville", size: 17))
-                        .foregroundStyle(Color.white.opacity(0.7))
+                        .foregroundStyle(Color("fontColor"))
                     Divider().frame(width: 50, height: 1)
                         .background(Color("lineColor"))
                     //Quote abriviated
@@ -28,7 +29,8 @@ struct QuotesView: View {
                         .multilineTextAlignment(.leading)
                         .font(Font.custom("Baskerville", size: 22))
                 }
-                .listRowBackground(Color("addBackgroundColor"))
+                //Change this for list BG color
+                .listRowBackground(Color("backgroundColor"))
                 Spacer()
             }
         }

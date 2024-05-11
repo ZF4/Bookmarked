@@ -28,25 +28,41 @@ struct QuoteList: View {
                     HStack(alignment: .top) {
                         BookView(book: book, showText: false)
                         VStack(alignment: .leading) {
-                            Text(book.title)
-                                .font(.system(size: 20))
-                                .lineLimit(2)
-                                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                .bold()
-                            Text(book.author)
-                                .font(.system(size: 15))
-                                .fontWeight(.light)
-                                .padding(.bottom, 5)
+                            VStack(alignment: .leading) {
+                                Text(book.title)
+                                    .font(.system(size: 20))
+                                    .lineLimit(1)
+                                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                                    .bold()
+                                Text(book.author)
+                                    .font(.system(size: 15))
+                                    .fontWeight(.light)
+                                
+                            }
+                            .padding(.bottom, 30)
                             
-                            Spacer()
+                            HStack(alignment: .top) {
+                                VStack(alignment: .leading) {
+                                    Rating(book: book)
+                                    
+                                    DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Select")
+                                    
+                                }
+                            }
                             
-                            Rating(book: book)
                         }
-                        .frame(height: 90)
+                        
                         Spacer()
                     }
                     .padding(.horizontal)
                 }
+                .padding(.top)
+                .navigationBarTitleDisplayMode(.inline)
+                
+                
+                Divider().frame(height: 1)
+                    .background(Color("lineColor"))
+                    .padding(.horizontal, 15)
                 
                 Group {
                     if sortedQuote.isEmpty {
@@ -64,10 +80,12 @@ struct QuoteList: View {
                                         page = quote.pageNum
                                     } label: {
                                         QuotesView(quote: quote)
+                                        
                                     }
-
+                                    
                                 }
-                                .listRowBackground(Color("addBackgroundColor"))
+                                //Change this for list BG color
+                                .listRowBackground(Color("backgroundColor"))
                             }
                             .onDelete(perform: { indexSet in
                                 withAnimation {
@@ -82,6 +100,7 @@ struct QuoteList: View {
                                 }
                             })
                         }
+                        .listStyle(PlainListStyle())
                         .background(Color("backgroundColor"))
                         .scrollContentBackground(.hidden)
                     }
@@ -99,10 +118,6 @@ struct QuoteList: View {
                     Image(systemName: "plus")
                 }
             }
-        }
-        .overlay(alignment: .top) {
-            DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Select")
-                .offset(x: -10, y: 100)
         }
     }
 }

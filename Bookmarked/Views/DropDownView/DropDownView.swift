@@ -12,9 +12,11 @@ import Foundation
 struct DropDownView: View {
     @Environment(\.modelContext) var modelContext
     @Environment(\.colorScheme) var scheme
+    @Query var bookGoal: [BookGoalModel]
     @State private var isExpanded = false
     @State var bookStatus: String?
     @State var options: [String]
+    @State var test: Int? = 0
     let book: BookModel?
     let prompt: String
     
@@ -81,10 +83,13 @@ struct DropDownView: View {
     func saveStatus(status: String) {
         if let book {
             book.bookStatus = status
+            if status == "Finished" && bookGoal.count > 0 {
+                bookGoal[0].currentNumber += 1
+            }
         }
     }
 }
 
 #Preview {
-    DropDownView(options: ["Want to Read", "Reading", "Finished"], book: BookModel(title: "", author: "", bookStatus: "Want to Read"), prompt: "Select")
+    DropDownView(options: ["Want to Read", "Reading", "Finished"], test: 0, book: BookModel(title: "", author: "", bookStatus: "Want to Read"), prompt: "Select")
 }

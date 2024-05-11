@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F0642AC2BAF356B002FDE55 /* FeatureQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0642AB2BAF356B002FDE55 /* FeatureQuote.swift */; };
+		9F23EEA42BE1C8570044DC9B /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */; };
+		9F3D95162BEA81B400F8C1EF /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D95152BEA81B400F8C1EF /* CustomProgressBar.swift */; };
 		9F5A81662AF00496005B6921 /* BookmarkedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A81652AF00496005B6921 /* BookmarkedApp.swift */; };
 		9F5A81682AF00496005B6921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A81672AF00496005B6921 /* ContentView.swift */; };
 		9F5A816A2AF00498005B6921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5A81692AF00498005B6921 /* Assets.xcassets */; };
@@ -24,6 +26,7 @@
 		9F83BF5C2B27A5E70093E923 /* AddQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F83BF5B2B27A5E70093E923 /* AddQuote.swift */; };
 		9F8E7CA22AF16DA100790438 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E7CA12AF16DA100790438 /* QuotesView.swift */; };
 		9F8E7CA62AF1701600790438 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8E7CA52AF1701600790438 /* BookList.swift */; };
+		9F9727132BE29A0B00D4982C /* BookGoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9727122BE29A0B00D4982C /* BookGoalModel.swift */; };
 		9FA1D2D62BA89E25006E69BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA1D2D52BA89E25006E69BC /* Extensions.swift */; };
 		9FA1D2D92BAA1127006E69BC /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA1D2D82BAA1127006E69BC /* Neumorphic */; };
 		9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA77A772B2799E900852A9E /* QuoteList.swift */; };
@@ -42,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		9F0642AB2BAF356B002FDE55 /* FeatureQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureQuote.swift; sourceTree = "<group>"; };
+		9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		9F3D95152BEA81B400F8C1EF /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		9F5A81622AF00496005B6921 /* Bookmarked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookmarked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A81652AF00496005B6921 /* BookmarkedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedApp.swift; sourceTree = "<group>"; };
 		9F5A81672AF00496005B6921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 		9F83BF5B2B27A5E70093E923 /* AddQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuote.swift; sourceTree = "<group>"; };
 		9F8E7CA12AF16DA100790438 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
 		9F8E7CA52AF1701600790438 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		9F9727122BE29A0B00D4982C /* BookGoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookGoalModel.swift; sourceTree = "<group>"; };
 		9FA1D2D52BA89E25006E69BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9FA77A772B2799E900852A9E /* QuoteList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteList.swift; sourceTree = "<group>"; };
 		9FB789D32B97849C0083AE9A /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
@@ -93,6 +99,22 @@
 				9F0642AB2BAF356B002FDE55 /* FeatureQuote.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		9F23EEA22BE1C8400044DC9B /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		9F23EEA52BE1D4430044DC9B /* Progress Bar */ = {
+			isa = PBXGroup;
+			children = (
+				9F3D95152BEA81B400F8C1EF /* CustomProgressBar.swift */,
+			);
+			path = "Progress Bar";
 			sourceTree = "<group>";
 		};
 		9F5A81592AF00496005B6921 = {
@@ -143,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				9F5E4CF02AF011AB005223A1 /* BookModel.swift */,
+				9F9727122BE29A0B00D4982C /* BookGoalModel.swift */,
 				9FD265002B8FAD850004687B /* QuoteModel.swift */,
 				9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */,
 			);
@@ -152,6 +175,8 @@
 		9F5E4CF22AF0124A005223A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9F23EEA52BE1D4430044DC9B /* Progress Bar */,
+				9F23EEA22BE1C8400044DC9B /* Side Menu */,
 				9F7430DE2BD82C5F000C05D7 /* Rating */,
 				9F7430DB2BD827F3000C05D7 /* DropDownView */,
 				9FEDEBC72BCCC18E00117289 /* API Search */,
@@ -324,6 +349,8 @@
 				9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */,
 				9F5E4D1F2AF0576A005223A1 /* BookView.swift in Sources */,
 				9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */,
+				9F3D95162BEA81B400F8C1EF /* CustomProgressBar.swift in Sources */,
+				9F23EEA42BE1C8570044DC9B /* SideMenuView.swift in Sources */,
 				9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */,
 				9FD265012B8FAD850004687B /* QuoteModel.swift in Sources */,
 				9F5E4CF12AF011AB005223A1 /* BookModel.swift in Sources */,
@@ -337,6 +364,7 @@
 				9FA1D2D62BA89E25006E69BC /* Extensions.swift in Sources */,
 				9F7430DD2BD82813000C05D7 /* DropDownView.swift in Sources */,
 				9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */,
+				9F9727132BE29A0B00D4982C /* BookGoalModel.swift in Sources */,
 				9F5A81662AF00496005B6921 /* BookmarkedApp.swift in Sources */,
 				9F8E7CA22AF16DA100790438 /* QuotesView.swift in Sources */,
 				9F0642AC2BAF356B002FDE55 /* FeatureQuote.swift in Sources */,
@@ -489,7 +517,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = zf.codes.Bookmarked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -521,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = zf.codes.Bookmarked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

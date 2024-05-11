@@ -17,9 +17,9 @@ struct BookmarkedApp: App {
             NavigationView {
                 ContentView()
                     .task {
-                        try? Tips.resetDatastore()
+                        //Undo reset for prod
+//                        try? Tips.resetDatastore()
                         try? Tips.configure([
-//                            .displayFrequency(.immediate)
                             .datastoreLocation(.applicationDefault)
                         ])
                     }
@@ -28,7 +28,7 @@ struct BookmarkedApp: App {
         }
     }
     init() {
-        let schema = Schema([BookModel.self])
+        let schema = Schema([BookModel.self, BookGoalModel.self])
         let config = ModelConfiguration("MyBooks", schema: schema)
         do {
             container = try ModelContainer(for: schema, configurations: config)

@@ -10,6 +10,7 @@ import Neumorphic
 import SwiftData
 
 struct FeatureQuote: View {
+    @AppStorage("bookGoalSet") var bookGoalSet: Bool = false
     @Query var books: [BookModel]
     
     var body: some View {
@@ -36,7 +37,7 @@ struct FeatureQuote: View {
                                     }
                                 }
                             }
-                            .padding(.bottom)
+                            .padding(.bottom, bookGoalSet ? 0 : 10)
                             .scrollIndicators(.hidden)
                             
                         }
