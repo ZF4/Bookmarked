@@ -38,7 +38,7 @@ struct CustomProgressBar: View {
                     
                     if bookGoal[0].currentNumber == bookGoal[0].goalNumber {
                         Text(String(format: "%.0f", self.value * 100) + "%")
-                            .font(.caption).foregroundStyle(Color.yellow.opacity(0.75))
+                            .font(.caption).foregroundStyle(Color.gray.opacity(0.75))
                     } else {
                         Text(String(format: "%.0f", self.value * 100) + "%")
                             .font(.caption).foregroundStyle(Color.gray.opacity(0.75))
@@ -57,6 +57,6 @@ struct CustomProgressBar: View {
     }
 }
 
-#Preview {
-    CustomProgressBar()
-}
+//#Preview {
+//    CustomProgressBar()
+//}

@@ -84,7 +84,11 @@ struct DropDownView: View {
         if let book {
             book.bookStatus = status
             if status == "Finished" && bookGoal.count > 0 {
-                bookGoal[0].currentNumber += 1
+                if bookGoal[0].goalNumber == bookGoal[0].currentNumber {
+                    return
+                } else {
+                    bookGoal[0].currentNumber += 1
+                }
             }
         }
     }

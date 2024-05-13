@@ -45,7 +45,7 @@ struct QuoteList: View {
                                 VStack(alignment: .leading) {
                                     Rating(book: book)
                                     
-                                    DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Select")
+                                    DropDownView(bookStatus: selectedStatus, options: ["Want to Read", "Reading", "Finished"], book: book, prompt: "Want to Read")
                                     
                                 }
                             }

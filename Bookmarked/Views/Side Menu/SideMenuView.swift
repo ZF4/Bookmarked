@@ -24,21 +24,36 @@ struct SideMenuView: View {
     @State var percentComplete: CGFloat = 0.0
     
     var body: some View {
-        VStack {
-            Image("lightModeLogo")
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 70)
-                .foregroundStyle(Color("logoColor"))
-                .padding(.bottom, 35)
+        VStack(alignment: .center) {
+            HStack {
+                Text("BOOKMARKED")
+                    .fontWeight(.black)
+                    .font(.system(size: 15))
+                    .foregroundStyle(Color.black)
+                
+                Image("bookmarkedTrimmed")
+                    .renderingMode(.template)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 15, height: 15)
+                    .foregroundStyle(Color.black)
+            }
             
             if !editBookGoal {
                 HStack {
-                    Text("\(bookGoal[0].goalNumber)")
+                    Text("\(bookGoal[0].currentNumber)")
+                        .font(.largeTitle)
+                        .foregroundStyle(Color.black)
+                    
                     Divider()
                         .frame(width: 1, height: 20)
-                    Text("\(bookGoal[0].currentNumber)")
+                        .background(Color.black)
+                    
+                        .frame(width: 1, height: 20)
+                    Text("\(bookGoal[0].goalNumber)")
+                        .font(.largeTitle)
+                        .foregroundStyle(Color.black)
+
                 }
                 HStack {
                     Button {
@@ -49,7 +64,10 @@ struct SideMenuView: View {
                         resetBookGoal()
                     } label: {
                         Text("Reset")
+                            .frame(width: 45)
+                            .foregroundStyle(Color.black)
                     }
+                    .tint(Color.gray)
                     .buttonStyle(BorderedButtonStyle())
                     
                     Button {
@@ -57,18 +75,15 @@ struct SideMenuView: View {
                         isEditing = true
                     } label: {
                         Text("Edit")
+                            .frame(width: 45)
+                            .foregroundStyle(Color.black)
                     }
+                    .tint(Color.gray)
                     .buttonStyle(BorderedButtonStyle())
                     
                 }
                 
             } else if isEditing {
-                HStack {
-                    Text("\(bookGoal[0].goalNumber)")
-                    Divider()
-                        .frame(width: 1, height: 20)
-                    Text("\(bookGoal[0].currentNumber)")
-                }
                 VStack {
                     HStack {
                         Button {
@@ -77,6 +92,7 @@ struct SideMenuView: View {
                         } label: {
                             Image(systemName: "minus.square.fill")
                                 .font(.system(size: 25))
+                                .tint(Color.blue)
                         }
                         .disabled(minusButtonDisabled)
                         .padding(.trailing, 10)
@@ -84,6 +100,7 @@ struct SideMenuView: View {
                         Text(String(bookGoalNumber))
                             .font(.system(size: 30))
                             .padding(.trailing, 10)
+                            .foregroundStyle(Color.black)
                         
                         Button {
                             bookGoalNumber += 1
@@ -91,6 +108,7 @@ struct SideMenuView: View {
                         } label: {
                             Image(systemName: "plus.app.fill")
                                 .font(.system(size: 25))
+                                .tint(Color.blue)
                         }
                     }
                     Button {
@@ -99,10 +117,12 @@ struct SideMenuView: View {
                         isEditing = false
                         editBookGoal = false
                     } label: {
-                        Text("Update Book Goal")
+                        Text("Update")
+                            .foregroundStyle(Color.black)
                     }
                     .disabled(bookGoalNumber <= 0)
                     .buttonStyle(BorderedButtonStyle())
+                    .tint(Color.gray)
                 }
                 .onAppear {
                     if !bookGoal.isEmpty {
@@ -118,6 +138,7 @@ struct SideMenuView: View {
                     } label: {
                         Image(systemName: "minus.square.fill")
                             .font(.system(size: 25))
+                            .tint(Color.blue)
                     }
                     .disabled(minusButtonDisabled)
                     .padding(.trailing, 10)
@@ -125,6 +146,7 @@ struct SideMenuView: View {
                     Text(String(bookGoalNumber))
                         .font(.system(size: 30))
                         .padding(.trailing, 10)
+                        .foregroundStyle(Color.black)
                     
                     Button {
                         bookGoalNumber += 1
@@ -132,6 +154,7 @@ struct SideMenuView: View {
                     } label: {
                         Image(systemName: "plus.app.fill")
                             .font(.system(size: 25))
+                            .tint(Color.blue)
                     }
                 }
                 .padding(.bottom, 15)
@@ -148,16 +171,18 @@ struct SideMenuView: View {
                     editBookGoal = false
                 } label: {
                     Text("Set Book Goal")
+                        .foregroundStyle(Color.black)
                 }
                 .disabled(bookGoalNumber <= 0)
                 .buttonStyle(BorderedButtonStyle())
+                .tint(Color.gray)
                 
                 
             }
             
             Spacer()
             
-            Image("myLogo")
+            Image("logoTrimmed")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 100)
@@ -165,6 +190,7 @@ struct SideMenuView: View {
             Text("\(getVersion())")
                 .padding(.bottom)
                 .fontWeight(.light)
+                .foregroundStyle(Color.black)
             
         }
         .padding(.horizontal, 50)
