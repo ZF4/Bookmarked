@@ -32,21 +32,28 @@ struct SingleQuoteView: View {
                         Text(quote.pageNum)
                             .font(Font.custom("Baskerville", size: 22))
                             .foregroundStyle(Color.black.opacity(0.8))
+                        
+                        Spacer()
                     }
+                    .frame(width: 330)
                     .padding(.top, 50)
                     .padding(.bottom, 50)
                     
-                    LabelAlignment(text: quote.text,                             textAlignmentStyle: .justified,
-                                   width: 330,
-                                   fontName: "Baskerville",
-                                   fontSize: 35,
-                                   fontColor: UIColor(Color.black.opacity(0.8)))
-                    .padding(.bottom, 30)
-                    
-                    HStack {
-                        Text(book.author)
-                            .font(Font.custom("BaskervilleLight", size: 22))
-                            .foregroundStyle(Color.black.opacity(0.8))
+                    VStack(alignment: .leading) {
+                        LabelAlignment(text: quote.text,                             textAlignmentStyle: .justified,
+                                       width: 330,
+                                       fontName: "Baskerville",
+                                       fontSize: 35,
+                                       fontColor: UIColor(Color.black.opacity(0.8)))
+                        .padding(.bottom, 30)
+                        
+                        HStack {
+                            Text(book.author)
+                                .font(Font.custom("BaskervilleLight", size: 22))
+                                .foregroundStyle(Color.black.opacity(0.8))
+                            Spacer()
+                        }
+                        .frame(width: 330)
                     }
                 }
             }
