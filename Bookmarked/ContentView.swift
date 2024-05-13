@@ -30,7 +30,7 @@ struct ContentView: View {
                 
                 VStack(alignment: .center) {
                     FeatureQuote()
-                        .padding(.leading)
+                        .padding(.horizontal)
                     
                     TipView(deleteBookTip)
                         .frame(width: 350)
