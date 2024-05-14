@@ -122,6 +122,8 @@ struct QuoteList: View {
     }
 }
 
+#if DEBUG
+
 #Preview {
     let preview = Preview(BookModel.self)
     preview.addExamples(BookModel.sampleBooks)
@@ -130,3 +132,4 @@ struct QuoteList: View {
     }
     .modelContainer(preview.container)
 }
+#endif

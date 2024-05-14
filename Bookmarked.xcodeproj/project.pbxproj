@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9F0642AC2BAF356B002FDE55 /* FeatureQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0642AB2BAF356B002FDE55 /* FeatureQuote.swift */; };
 		9F23EEA42BE1C8570044DC9B /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */; };
+		9F27E6EB2BF2C0B400229ADC /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E6EA2BF2C0B400229ADC /* WebService.swift */; };
+		9F27E6ED2BF2C0DF00229ADC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F27E6EC2BF2C0DF00229ADC /* APIModel.swift */; };
 		9F3D95162BEA81B400F8C1EF /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D95152BEA81B400F8C1EF /* CustomProgressBar.swift */; };
 		9F5A81662AF00496005B6921 /* BookmarkedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A81652AF00496005B6921 /* BookmarkedApp.swift */; };
 		9F5A81682AF00496005B6921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5A81672AF00496005B6921 /* ContentView.swift */; };
@@ -37,8 +39,8 @@
 		9FD791952BD0324F00E64DC7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD791942BD0324F00E64DC7 /* Constants.swift */; };
 		9FDBB30C2B3CBADD0021CFBE /* AddBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */; };
 		9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */; };
-		9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */; };
-		9FEDEBC32BCB7BE300117289 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC22BCB7BE300117289 /* WebService.swift */; };
+		9FEDEBC12BCB7B0700117289 /* OldAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC02BCB7B0700117289 /* OldAPIModel.swift */; };
+		9FEDEBC32BCB7BE300117289 /* OldWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC22BCB7BE300117289 /* OldWebService.swift */; };
 		9FEDEBC62BCB7C1F00117289 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */; };
 		9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC82BCCC1A800117289 /* APISearch.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		9F0642AB2BAF356B002FDE55 /* FeatureQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureQuote.swift; sourceTree = "<group>"; };
 		9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		9F27E6EA2BF2C0B400229ADC /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		9F27E6EC2BF2C0DF00229ADC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		9F3D95152BEA81B400F8C1EF /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 		9F5A81622AF00496005B6921 /* Bookmarked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookmarked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5A81652AF00496005B6921 /* BookmarkedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkedApp.swift; sourceTree = "<group>"; };
@@ -75,8 +79,8 @@
 		9FD791942BD0324F00E64DC7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9FDBB30B2B3CBADD0021CFBE /* AddBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBook.swift; sourceTree = "<group>"; };
 		9FDBB30E2B3CBD950021CFBE /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
-		9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBooksApIResponse.swift; sourceTree = "<group>"; };
-		9FEDEBC22BCB7BE300117289 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		9FEDEBC02BCB7B0700117289 /* OldAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldAPIModel.swift; sourceTree = "<group>"; };
+		9FEDEBC22BCB7BE300117289 /* OldWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldWebService.swift; sourceTree = "<group>"; };
 		9FEDEBC82BCCC1A800117289 /* APISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,9 +158,9 @@
 		9F5A816B2AF00498005B6921 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				9FB789D52B9784EB0083AE9A /* BookSamples.swift */,
 				9F5A816C2AF00498005B6921 /* Preview Assets.xcassets */,
 				9FB789D32B97849C0083AE9A /* PreviewContainer.swift */,
-				9FB789D52B9784EB0083AE9A /* BookSamples.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -167,7 +171,8 @@
 				9F5E4CF02AF011AB005223A1 /* BookModel.swift */,
 				9F9727122BE29A0B00D4982C /* BookGoalModel.swift */,
 				9FD265002B8FAD850004687B /* QuoteModel.swift */,
-				9FEDEBC02BCB7B0700117289 /* GoogleBooksApIResponse.swift */,
+				9FEDEBC02BCB7B0700117289 /* OldAPIModel.swift */,
+				9F27E6EC2BF2C0DF00229ADC /* APIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,7 +198,8 @@
 			children = (
 				9F5E4CF62AF0191F005223A1 /* CustomFonts */,
 				9F5E4D1C2AF04816005223A1 /* TextAlignment.swift */,
-				9FEDEBC22BCB7BE300117289 /* WebService.swift */,
+				9FEDEBC22BCB7BE300117289 /* OldWebService.swift */,
+				9F27E6EA2BF2C0B400229ADC /* WebService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				9FFDEE9A2BF28C5F007A0F46 /* PBXTargetDependency */,
+				9FFDEE982BF28C5B007A0F46 /* PBXTargetDependency */,
 			);
 			name = Bookmarked;
 			packageProductDependencies = (
@@ -349,9 +357,10 @@
 				9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */,
 				9F5E4D1F2AF0576A005223A1 /* BookView.swift in Sources */,
 				9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */,
+				9F27E6EB2BF2C0B400229ADC /* WebService.swift in Sources */,
 				9F3D95162BEA81B400F8C1EF /* CustomProgressBar.swift in Sources */,
 				9F23EEA42BE1C8570044DC9B /* SideMenuView.swift in Sources */,
-				9FEDEBC12BCB7B0700117289 /* GoogleBooksApIResponse.swift in Sources */,
+				9FEDEBC12BCB7B0700117289 /* OldAPIModel.swift in Sources */,
 				9FD265012B8FAD850004687B /* QuoteModel.swift in Sources */,
 				9F5E4CF12AF011AB005223A1 /* BookModel.swift in Sources */,
 				9F5E4CF42AF0127E005223A1 /* SingleQuoteView.swift in Sources */,
@@ -359,10 +368,11 @@
 				9F7430E02BD82C6E000C05D7 /* Rating.swift in Sources */,
 				9FD791932BD0153C00E64DC7 /* Tips.swift in Sources */,
 				9F5A81682AF00496005B6921 /* ContentView.swift in Sources */,
-				9FEDEBC32BCB7BE300117289 /* WebService.swift in Sources */,
+				9FEDEBC32BCB7BE300117289 /* OldWebService.swift in Sources */,
 				9F5E4D1D2AF04816005223A1 /* TextAlignment.swift in Sources */,
 				9FA1D2D62BA89E25006E69BC /* Extensions.swift in Sources */,
 				9F7430DD2BD82813000C05D7 /* DropDownView.swift in Sources */,
+				9F27E6ED2BF2C0DF00229ADC /* APIModel.swift in Sources */,
 				9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */,
 				9F9727132BE29A0B00D4982C /* BookGoalModel.swift in Sources */,
 				9F5A81662AF00496005B6921 /* BookmarkedApp.swift in Sources */,
@@ -373,6 +383,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FFDEE982BF28C5B007A0F46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 9FFDEE972BF28C5B007A0F46 /* Neumorphic */;
+		};
+		9FFDEE9A2BF28C5F007A0F46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 9FFDEE992BF28C5F007A0F46 /* SwiftyJSON */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9F5A816E2AF00498005B6921 /* Debug */ = {
@@ -506,6 +527,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bookmarked/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookmarked;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,6 +561,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bookmarked/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookmarked;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -607,6 +632,16 @@
 			productName = Neumorphic;
 		};
 		9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FEDEBC42BCB7C1F00117289 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		9FFDEE972BF28C5B007A0F46 /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9FA1D2D72BAA1127006E69BC /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+		9FFDEE992BF28C5F007A0F46 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9FEDEBC42BCB7C1F00117289 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;

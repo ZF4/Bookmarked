@@ -68,6 +68,7 @@ struct BookList: View {
     }
 }
 
+#if DEBUG
 #Preview {
     let preview = Preview(BookModel.self)
     preview.addExamples(BookModel.sampleBooks)
@@ -76,3 +77,4 @@ struct BookList: View {
     }
     .modelContainer(preview.container)
 }
+#endif

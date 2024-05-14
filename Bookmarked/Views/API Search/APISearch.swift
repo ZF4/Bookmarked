@@ -99,6 +99,7 @@ struct NewBookButton: View {
     }
 }
 
+#if DEBUG
 #Preview {
     let preview = Preview(BookModel.self)
     preview.addExamples(BookModel.sampleBooks)
@@ -107,4 +108,4 @@ struct NewBookButton: View {
     }
     .modelContainer(preview.container)
 }
-
+#endif
