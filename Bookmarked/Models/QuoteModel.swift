@@ -14,11 +14,13 @@ class QuoteModel {
     var text: String
     var pageNum: String
     var creationDate: Date = Date.now
+    var isHighlighted: Bool?
 
-    init(id: String = UUID().uuidString, quote: String = "", pageNum: String = "") {
+    init(id: String = UUID().uuidString, quote: String = "", pageNum: String = "", isHighlighted: Bool? = false) {
         self.id = id
         self.text = quote
         self.pageNum = pageNum
+        self.isHighlighted = isHighlighted
     }
     
     var book: BookModel?

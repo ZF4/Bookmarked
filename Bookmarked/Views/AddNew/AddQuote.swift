@@ -15,6 +15,7 @@ struct AddQuote: View {
     @Environment(\.dismiss) var dismiss
     @State var text: String = ""
     @State var pageNum: String = ""
+    @State var isHighlighted: Bool = false
     var lineLimit = 3
     
     var book: BookModel
@@ -24,16 +25,24 @@ struct AddQuote: View {
         ZStack {
             VStack {
                 VStack(alignment: .leading) {
-                    Text("")
-                        .bold()
-                        .font(.system(size: 25))
-                        .padding(.top)
                     HStack {
                         TextField("###", text: $pageNum, axis: .vertical)
                             .underlineTextField()
                             .frame(width: 55)
                             .keyboardType(.numberPad)
                             .onReceive(Just(pageNum)) { _ in limitText(lineLimit)}
+                        
+                        Spacer()
+                        
+                        Image(systemName: "highlighter")
+                            .foregroundStyle(Color.yellow)
+                        
+                        Button(action: {
+                            isHighlighted.toggle()
+                        }, label: {
+                            Image(systemName: isHighlighted ? "checkmark.square" : "square")
+                        })
+                        .padding(.trailing, 4)
                     }
                     
                     HStack {
@@ -62,6 +71,7 @@ struct AddQuote: View {
                 if let currentQuote {
                     text = currentQuote.text
                     pageNum = currentQuote.pageNum
+                    isHighlighted = currentQuote.isHighlighted ?? false
                 }
             }
         }
@@ -71,8 +81,9 @@ struct AddQuote: View {
         if let currentQuote {
             currentQuote.text = text
             currentQuote.pageNum = pageNum
+            currentQuote.isHighlighted = isHighlighted
         } else {
-            let newQuote = QuoteModel(quote: text, pageNum: pageNum)
+            let newQuote = QuoteModel(quote: text, pageNum: pageNum, isHighlighted: isHighlighted)
             book.quotes?.append(newQuote)
         }
         dismiss()

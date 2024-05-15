@@ -43,7 +43,7 @@ struct SingleQuoteView: View {
                                        width: 330,
                                        fontName: "Baskerville",
                                        fontSize: 35,
-                                       fontColor: UIColor(Color.black.opacity(0.8)), highlight: true)
+                                       fontColor: UIColor(Color.black.opacity(0.8)), highlight: quote.isHighlighted ?? false)
                         .padding(.bottom, 30)
                         
                         HStack {
