@@ -10,11 +10,13 @@ import SwiftData
 
 @Model
 class QuoteModel {
+    var id: String
     var text: String
     var pageNum: String
     var creationDate: Date = Date.now
 
-    init(quote: String = "", pageNum: String = "") {
+    init(id: String = UUID().uuidString, quote: String = "", pageNum: String = "") {
+        self.id = id
         self.text = quote
         self.pageNum = pageNum
     }

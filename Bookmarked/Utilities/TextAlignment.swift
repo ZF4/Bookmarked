@@ -9,18 +9,6 @@ import Foundation
 import UIKit
 import SwiftUI
 
-//For getting text justified alignment, not used right now
-
-//    init() {
-//        for familyname in UIFont.familyNames {
-//            print(familyname)
-//
-//            for fontName in UIFont.fontNames(forFamilyName: familyname) {
-//                print("-- \(fontName)")
-//            }
-//        }
-//    }
-
 struct LabelAlignment: UIViewRepresentable {
     var text: String
     var textAlignmentStyle : TextAlignmentStyle
@@ -28,7 +16,8 @@ struct LabelAlignment: UIViewRepresentable {
     var fontName: String
     var fontSize: CGFloat
     var fontColor: UIColor
-
+    var highlight: Bool
+    
     func makeUIView(context: Context) -> UILabel {
         let font = UIFont(name: fontName, size: fontSize)
         let label = UILabel()
@@ -39,12 +28,21 @@ struct LabelAlignment: UIViewRepresentable {
         label.setContentHuggingPriority(.required, for: .horizontal)
         label.setContentHuggingPriority(.required, for: .vertical)
         label.textColor = fontColor
-
+        
         return label
     }
-
+    
     func updateUIView(_ uiView: UILabel, context: Context) {
-        uiView.text = text
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 15
+        paragraphStyle.alignment = NSTextAlignment(rawValue: textAlignmentStyle.rawValue)!
+        let attributedText = NSAttributedString(
+            string: text,
+            attributes: [
+                .backgroundColor: highlight ? UIColor(Color.yellow.opacity(0.3)) : UIColor.clear,
+                .paragraphStyle: paragraphStyle,
+            ])
+        uiView.attributedText = attributedText
     }
 }
 

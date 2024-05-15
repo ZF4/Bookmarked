@@ -18,11 +18,10 @@ struct AddQuote: View {
     var lineLimit = 3
     
     var book: BookModel
+    @Binding var currentQuote: QuoteModel?
+    
     var body: some View {
         ZStack {
-//            Color("addBackgroundColor")
-//                .ignoresSafeArea()
-            
             VStack {
                 VStack(alignment: .leading) {
                     Text("")
@@ -59,14 +58,26 @@ struct AddQuote: View {
                 .buttonStyle(.borderedProminent)
                 .disabled(self.pageNum.isEmpty || self.text.isEmpty)
             }
+            .onAppear {
+                if let currentQuote {
+                    text = currentQuote.text
+                    pageNum = currentQuote.pageNum
+                }
+            }
         }
     }
     
     func addQuote() {
-        let newQuote = QuoteModel(quote: text, pageNum: pageNum)
-        book.quotes?.append(newQuote)
+        if let currentQuote {
+            currentQuote.text = text
+            currentQuote.pageNum = pageNum
+        } else {
+            let newQuote = QuoteModel(quote: text, pageNum: pageNum)
+            book.quotes?.append(newQuote)
+        }
         dismiss()
     }
+
     
     func limitText(_ upper: Int) {
         if pageNum.count > upper {
@@ -82,7 +93,7 @@ struct AddQuote: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: BookModel.self, configurations: config)
         let example = BookModel(title: "Be Useful", author: "Arnold S.")
-        return AddQuote(book: example)
+        return AddQuote(book: example, currentQuote: .constant(QuoteModel(id: "0", quote: "This is quote", pageNum: "12")))
             .modelContainer(container)
     } catch {
         fatalError("Failed to create model container.")

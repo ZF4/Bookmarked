@@ -13,7 +13,6 @@ struct SingleQuoteView: View {
     var book: BookModel
     
     var body: some View {
-        
         NavigationStack {
             ZStack(alignment: .top) {
                 Image(.newPage)
@@ -22,6 +21,7 @@ struct SingleQuoteView: View {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .leading) {
+                    Spacer()
                     HStack {
                         Text(book.title)
                             .font(Font.custom("Baskerville", size: 22))
@@ -36,15 +36,14 @@ struct SingleQuoteView: View {
                         Spacer()
                     }
                     .frame(width: 330)
-                    .padding(.top, 50)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 30)
                     
                     VStack(alignment: .leading) {
                         LabelAlignment(text: quote.text,                             textAlignmentStyle: .justified,
                                        width: 330,
                                        fontName: "Baskerville",
                                        fontSize: 35,
-                                       fontColor: UIColor(Color.black.opacity(0.8)))
+                                       fontColor: UIColor(Color.black.opacity(0.8)), highlight: true)
                         .padding(.bottom, 30)
                         
                         HStack {
@@ -55,6 +54,7 @@ struct SingleQuoteView: View {
                         }
                         .frame(width: 330)
                     }
+                    Spacer()
                 }
             }
         }

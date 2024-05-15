@@ -15,6 +15,7 @@ struct QuoteList: View {
     @State var selectedQuote: QuoteModel?
     @State var selectedStatus: String?
     @State var createNewQuote = false
+    @State var editQuote = false
     let book: BookModel
     
     var body: some View {
@@ -59,7 +60,6 @@ struct QuoteList: View {
                 .padding(.top)
                 .navigationBarTitleDisplayMode(.inline)
                 
-                
                 Divider().frame(height: 1)
                     .background(Color("lineColor"))
                     .padding(.horizontal, 15)
@@ -74,15 +74,13 @@ struct QuoteList: View {
                                 NavigationLink {
                                     SingleQuoteView(quote: quote, book: book)
                                 } label: {
-                                    Button {
+                                    QuotesView(quote: quote)
+                                }
+                                .contextMenu {
+                                    Button("Edit") {
                                         selectedQuote = quote
-                                        text = quote.text
-                                        page = quote.pageNum
-                                    } label: {
-                                        QuotesView(quote: quote)
-                                        
+                                        editQuote = true
                                     }
-                                    
                                 }
                                 //Change this for list BG color
                                 .listRowBackground(Color("backgroundColor"))
@@ -94,6 +92,11 @@ struct QuoteList: View {
                                         book.quotes?.forEach { bookQuote in
                                             if quote.id == bookQuote.id {
                                                 modelContext.delete(quote)
+                                                do {
+                                                    try modelContext.save()
+                                                } catch {
+                                                    print("error")
+                                                }
                                             }
                                         }
                                     }
@@ -107,7 +110,11 @@ struct QuoteList: View {
                 }
                 .background(Color("backgroundColor"))
                 .sheet(isPresented: $createNewQuote) {
-                    AddQuote(book: book)
+                    AddQuote(book: book, currentQuote: .constant(nil))
+                        .presentationDetents([.medium])
+                }
+                .sheet(isPresented: $editQuote) {
+                    AddQuote(book: book, currentQuote: $selectedQuote)
                         .presentationDetents([.medium])
                 }
             }
