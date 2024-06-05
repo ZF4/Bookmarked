@@ -11,6 +11,7 @@ import SwiftData
 struct SingleQuoteView: View {
     var quote: QuoteModel
     var book: BookModel
+    @State var fontSize: CGFloat = 35
     
     var body: some View {
         NavigationStack {
@@ -42,7 +43,7 @@ struct SingleQuoteView: View {
                         LabelAlignment(text: quote.text,                             textAlignmentStyle: .justified,
                                        width: 330,
                                        fontName: "Baskerville",
-                                       fontSize: 35,
+                                       fontSize: quote.fontSize ?? 35,
                                        fontColor: UIColor(Color.black.opacity(0.8)), highlight: quote.isHighlighted ?? false)
                         .padding(.bottom, 30)
                         

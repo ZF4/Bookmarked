@@ -11,6 +11,9 @@ import SwiftyJSON
 enum IDTypes {
     case editionType
     case coverID
+    case isbnNum
+    case lccnNum
+    case oclcNum
     
     var stringValue: String {
         switch self {
@@ -18,6 +21,12 @@ enum IDTypes {
             return "olid"
         case .coverID:
             return "id"
+        case .isbnNum:
+            return "isbn"
+        case .lccnNum:
+            return "lccn"
+        case .oclcNum:
+            return "oclc"
         }
     }
     
@@ -27,6 +36,12 @@ enum IDTypes {
             return "cover_edition_key"
         case .coverID:
             return "cover_i"
+        case .isbnNum:
+            return "isbn"
+        case .lccnNum:
+            return "lccn"
+        case .oclcNum:
+            return "oclc"
         }
     }
 }

@@ -16,6 +16,8 @@ struct AddQuote: View {
     @State var text: String = ""
     @State var pageNum: String = ""
     @State var isHighlighted: Bool = false
+    @State var isBigFont: Bool = true
+    @State var fontSize: CGFloat = 35
     var lineLimit = 3
     
     var book: BookModel
@@ -33,6 +35,42 @@ struct AddQuote: View {
                             .onReceive(Just(pageNum)) { _ in limitText(lineLimit)}
                         
                         Spacer()
+                        
+                        
+                        HStack(alignment: .bottom) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color.gray)
+                                    .frame(width: 30, height: 30)
+                                
+                                Button(action: {
+                                    isBigFont = false
+                                    fontSize = 25
+                                }, label: {
+                                    Text("aA")
+                                        .foregroundStyle(Color.white.opacity(!isBigFont ? 1 : 0.3))
+                                        .font(.system(size: 14))
+                                })
+                                .tint(Color.white)
+                            }
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .fill(Color.gray)
+                                    .frame(width: 30, height: 30)
+                                
+                                Button(action: {
+                                    isBigFont = true
+                                    fontSize = 35
+                                }, label: {
+                                    Text("aA")
+                                        .foregroundStyle(Color.white.opacity(isBigFont ? 1 : 0.3))
+                                        .font(.system(size: 20))
+                                })
+                                .tint(Color.white)
+                            }
+                        }
+                        .padding(.trailing, 25)
                         
                         Image(systemName: "highlighter")
                             .foregroundStyle(Color.yellow)
@@ -72,6 +110,8 @@ struct AddQuote: View {
                     text = currentQuote.text
                     pageNum = currentQuote.pageNum
                     isHighlighted = currentQuote.isHighlighted ?? false
+                    fontSize = currentQuote.fontSize ?? 35
+                    isBigFont = currentQuote.isBigFont ?? true
                 }
             }
         }
@@ -82,22 +122,22 @@ struct AddQuote: View {
             currentQuote.text = text
             currentQuote.pageNum = pageNum
             currentQuote.isHighlighted = isHighlighted
+            currentQuote.fontSize = fontSize
+            currentQuote.isBigFont = isBigFont
         } else {
-            let newQuote = QuoteModel(quote: text, pageNum: pageNum, isHighlighted: isHighlighted)
+            let newQuote = QuoteModel(quote: text, pageNum: pageNum, isHighlighted: isHighlighted, fontSize: fontSize, isBigFont: isBigFont)
             book.quotes?.append(newQuote)
         }
         dismiss()
     }
-
+    
     
     func limitText(_ upper: Int) {
         if pageNum.count > upper {
             pageNum = String(pageNum.prefix(upper))
         }
     }
-    
 }
-
 
 #Preview {
     do {
