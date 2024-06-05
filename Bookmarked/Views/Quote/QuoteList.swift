@@ -19,7 +19,7 @@ struct QuoteList: View {
     let book: BookModel
     
     var body: some View {
-        let sortedQuote = book.quotes?.sorted(using: KeyPathComparator(\QuoteModel.creationDate)) ?? []
+        let sortedQuote = book.quotes?.sorted(using: KeyPathComparator(\QuoteModel.pageNum)) ?? []
         ZStack {
             Color("backgroundColor")
                 .ignoresSafeArea()
