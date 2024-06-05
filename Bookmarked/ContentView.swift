@@ -17,6 +17,7 @@ struct ContentView: View {
     @Environment(\.dismiss) private var dismiss
     @Query var bookGoal: [BookGoalModel]
     @State var searchText = ""
+    @State private var hideFeatures = false
     @State private var createNewBook = false
     @State private var showMenu = false
     @State private var sortOrder = [SortDescriptor(\BookModel.title)]
@@ -29,15 +30,17 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .center) {
-                    FeatureQuote()
-                        .padding(.horizontal)
+                    if searchText.isEmpty {
+                        FeatureQuote()
+                            .padding(.horizontal)
+                    }
                     
                     TipView(deleteBookTip)
                         .frame(width: 350)
                         .tipBackground(Color.black.opacity(0.1))
                         .tipImageSize(CGSize(width: 30, height: 30))
                     
-                    if bookGoalSet {
+                    if bookGoalSet && searchText.isEmpty {
                         CustomProgressBar(value: bookGoal[0].percentComplete)
                             .padding(.horizontal)
                     }
@@ -119,6 +122,7 @@ struct ContentView: View {
                 .background(Color.black.opacity(showMenu ? 0.5 : 0))
             }
         }
+        .searchable(text: $searchText, placement: .automatic, prompt: "Search your books")
         .tint(Color.primary)
     }
 }
