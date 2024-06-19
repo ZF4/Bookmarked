@@ -30,6 +30,10 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .center) {
+                    
+                    SearchBar(searchText: $searchText)
+                        .padding(.horizontal)
+                    
                     if searchText.isEmpty {
                         FeatureQuote()
                             .padding(.horizontal)
@@ -46,16 +50,16 @@ struct ContentView: View {
                     }
                     
                     BookList(searchString: searchText, sortOrder: sortOrder)
-                        .searchable(text: $searchText, prompt: "Search book titles")
+                    
                     Spacer()
                 }
+                .frame(minWidth: 425)
                 .background(Color("backgroundColor").edgesIgnoringSafeArea(.all))
                 .navigationTitle(showMenu ? "" : "Library")
                 .navigationBarTitleTextColor(Color.primary)
                 .foregroundStyle(Color.primary)
                 .toolbarRole(.editor)
                 .toolbar {
-                    
                     ToolbarItem(placement: .principal) {
                         HStack {
                             Image("lightModeLogo")
@@ -122,10 +126,10 @@ struct ContentView: View {
                 .background(Color.black.opacity(showMenu ? 0.5 : 0))
             }
         }
-        .searchable(text: $searchText, placement: .automatic, prompt: "Search your books")
         .tint(Color.primary)
     }
 }
+
 
 
 //#Preview {
