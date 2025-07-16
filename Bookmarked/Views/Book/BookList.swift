@@ -15,45 +15,42 @@ struct BookList: View {
     @State var isDeleting = false
     let deleteBookTipDone = DeleteBookTip()
     var body: some View {
-        NavigationStack {
-            Group {
-                if books.isEmpty {
-                    ContentUnavailableView("Add your first book", systemImage: "book.fill")
-                } else {
-                    ScrollView {
-                        LazyHStack(alignment: .center) {
-                            VStack(alignment: .leading, spacing: 10) {
-                                ForEach(books.chunked(into: 3), id: \.self) { chunk in
-                                    LazyHStack(spacing: 30) {
-                                        ForEach(chunk, id: \.self) { book in
-                                            NavigationLink {
-                                                QuoteList(book: book)
-                                            } label: {
-                                                BookView(book: book)
-                                                    .tint(.black)
-                                            }
-                                            .contextMenu {
-                                                Button("Delete") {
-                                                    if let index = books.firstIndex(where: { $0.id == book.id}) {
-                                                        modelContext.delete(books[index])
-                                                        deleteBookTipDone.invalidate(reason: .actionPerformed)
-                                                    }
+        Group {
+            if books.isEmpty {
+                ContentUnavailableView("Add your first book", systemImage: "book.fill")
+            } else {
+                ScrollView {
+                    LazyHStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            ForEach(books.chunked(into: 3), id: \.self) { chunk in
+                                LazyHStack(spacing: 30) {
+                                    ForEach(chunk, id: \.self) { book in
+                                        NavigationLink {
+                                            QuoteList(book: book)
+                                        } label: {
+                                            BookView(book: book)
+                                                .tint(.black)
+                                        }
+                                        .contextMenu {
+                                            Button("Delete") {
+                                                if let index = books.firstIndex(where: { $0.id == book.id}) {
+                                                    modelContext.delete(books[index])
+                                                    deleteBookTipDone.invalidate(reason: .actionPerformed)
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                .padding(.horizontal, 35)
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom)
+                            .padding(.horizontal, 35)
                         }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .toolbarRole(.editor)
     }
     
     

@@ -15,11 +15,12 @@ struct ContentView: View {
     @Environment(\.presentations) private var presentations
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("libraryName") var libraryName: String = ""
     @Query var bookGoal: [BookGoalModel]
     @State var searchText = ""
     @State private var hideFeatures = false
     @State private var createNewBook = false
-    @State private var showMenu = false
+    @State private var showSettings = false
     @State private var sortOrder = [SortDescriptor(\BookModel.title)]
     let deleteBookTip = DeleteBookTip()
     
@@ -34,10 +35,11 @@ struct ContentView: View {
                     SearchBar(searchText: $searchText)
                         .padding(.horizontal)
                     
-                    if searchText.isEmpty {
-                        FeatureQuote()
-                            .padding(.horizontal)
-                    }
+                    //MARK: Removed Quotes from Homescreen
+//                    if searchText.isEmpty {
+//                        FeatureQuote()
+//                            .padding(.horizontal)
+//                    }
                     
                     TipView(deleteBookTip)
                         .frame(width: 350)
@@ -55,7 +57,7 @@ struct ContentView: View {
                 }
                 .frame(minWidth: 425)
                 .background(Color("backgroundColor").edgesIgnoringSafeArea(.all))
-                .navigationTitle(showMenu ? "" : "Library")
+                .navigationTitle(libraryName == "" ? "Library" : "\(libraryName)'s Library")
                 .navigationBarTitleTextColor(Color.primary)
                 .foregroundStyle(Color.primary)
                 .toolbarRole(.editor)
@@ -67,20 +69,15 @@ struct ContentView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 45)
-                                .foregroundStyle(showMenu ? .clear : Color("logoColor"))
+                                .foregroundStyle(Color("logoColor"))
                         }
                     }
                     
                     ToolbarItem(placement: .topBarLeading) {
                         Button {
-                            showMenu.toggle()
+                            showSettings.toggle()
                         } label: {
-                            if showMenu {
-                                Image(systemName: "x.square.fill")
-                                    .foregroundStyle(Color.black)
-                            } else {
-                                Image(systemName: "text.justify")
-                            }
+                            Image(systemName: "text.justify")
                         }
                         
                     }
@@ -108,22 +105,19 @@ struct ContentView: View {
                         
                     }
                 }
+                .systemTrayView($showSettings) {
+                    VStack(spacing: 20) {
+                        ZStack {
+                            SettingsView()
+                        }
+                    }
+                    .padding(20)
+                }
                 .sheet(isPresented: $createNewBook) {
                     APISearch()
                         .environment(\.presentations, presentations + [$createNewBook])
                         .presentationDetents([.medium])
                 }
-                
-                GeometryReader { _ in
-                    HStack {
-                        SideMenuView()
-                            .offset(x: showMenu ? 0 : -UIScreen.main.bounds.width)
-                            .animation(.easeInOut(duration: 0.3), value: showMenu)
-                        
-                        Spacer()
-                    }
-                }
-                .background(Color.black.opacity(showMenu ? 0.5 : 0))
             }
         }
         .tint(Color.primary)
@@ -132,22 +126,25 @@ struct ContentView: View {
 
 
 
-//#Preview {
-//    do {
-//        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-//        let container = try ModelContainer(for: BookModel.self, configurations: config)
-//        //        let example = BookModel(title: "Be Useful", author: "Arnold S.")
-//        return  NavigationStack {
-//            ContentView()
-//                .task {
-//                    try? Tips.resetDatastore()
-//                    try? Tips.configure([
-//                        .datastoreLocation(.applicationDefault)
-//                    ])
-//                }
-//        }
-//        .modelContainer(container)
-//    } catch {
-//        fatalError("Failed to create model container.")
-//    }
-//}
+#Preview {
+    do {
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try ModelContainer(for: BookModel.self, BookGoalModel.self, configurations: config)
+        // Insert a sample BookGoalModel
+        let context = container.mainContext
+        let sampleGoal = BookGoalModel(goalNumber: 10, currentNumber: 2)
+        context.insert(sampleGoal)
+        return NavigationStack {
+            ContentView()
+                .task {
+                    try? Tips.resetDatastore()
+                    try? Tips.configure([
+                        .datastoreLocation(.applicationDefault)
+                    ])
+                }
+        }
+        .modelContainer(container)
+    } catch {
+        fatalError("Failed to create model container.")
+    }
+}
