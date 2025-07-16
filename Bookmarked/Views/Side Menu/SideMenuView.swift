@@ -176,8 +176,6 @@ struct SideMenuView: View {
                 .disabled(bookGoalNumber <= 0)
                 .buttonStyle(BorderedButtonStyle())
                 .tint(Color.gray)
-                
-                
             }
             
             Spacer()
@@ -196,8 +194,11 @@ struct SideMenuView: View {
         .padding(.horizontal, 50)
         .background(Color.white)
         .ignoresSafeArea(edges: .bottom)
+        
     }
     
+    
+    //MARK: Functions
     func updateBookGoal(newBookGoal: Int) {
         bookGoal[0].goalNumber = newBookGoal
     }

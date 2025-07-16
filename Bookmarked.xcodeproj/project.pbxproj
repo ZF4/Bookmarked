@@ -44,6 +44,9 @@
 		9FEDEBC32BCB7BE300117289 /* OldWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC22BCB7BE300117289 /* OldWebService.swift */; };
 		9FEDEBC62BCB7C1F00117289 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9FEDEBC52BCB7C1F00117289 /* SwiftyJSON */; };
 		9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDEBC82BCCC1A800117289 /* APISearch.swift */; };
+		B66E2AE82E27003900F4BD1E /* TrayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E2AE72E27003900F4BD1E /* TrayConfig.swift */; };
+		B66E2AEA2E2701E700F4BD1E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E2AE92E2701E700F4BD1E /* SettingsView.swift */; };
+		B66E2AEC2E28302C00F4BD1E /* OutlinedTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E2AEB2E28302C00F4BD1E /* OutlinedTextFieldStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		9FEDEBC02BCB7B0700117289 /* OldAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldAPIModel.swift; sourceTree = "<group>"; };
 		9FEDEBC22BCB7BE300117289 /* OldWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldWebService.swift; sourceTree = "<group>"; };
 		9FEDEBC82BCCC1A800117289 /* APISearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISearch.swift; sourceTree = "<group>"; };
+		B66E2AE72E27003900F4BD1E /* TrayConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrayConfig.swift; sourceTree = "<group>"; };
+		B66E2AE92E2701E700F4BD1E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B66E2AEB2E28302C00F4BD1E /* OutlinedTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedTextFieldStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				9F23EEA32BE1C8570044DC9B /* SideMenuView.swift */,
+				B66E2AE92E2701E700F4BD1E /* SettingsView.swift */,
+				B66E2AE72E27003900F4BD1E /* TrayConfig.swift */,
 			);
 			path = "Side Menu";
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				9F5E4CF62AF0191F005223A1 /* CustomFonts */,
 				9F5E4D1C2AF04816005223A1 /* TextAlignment.swift */,
 				9FEDEBC22BCB7BE300117289 /* OldWebService.swift */,
+				B66E2AEB2E28302C00F4BD1E /* OutlinedTextFieldStyle.swift */,
 				9F27E6EA2BF2C0B400229ADC /* WebService.swift */,
 			);
 			path = Utilities;
@@ -367,6 +376,7 @@
 				9FEDEBC92BCCC1A800117289 /* APISearch.swift in Sources */,
 				9FA77A782B2799E900852A9E /* QuoteList.swift in Sources */,
 				9F5E4D1F2AF0576A005223A1 /* BookView.swift in Sources */,
+				B66E2AEC2E28302C00F4BD1E /* OutlinedTextFieldStyle.swift in Sources */,
 				9FDBB30F2B3CBD950021CFBE /* AddPhoto.swift in Sources */,
 				9F27E6EB2BF2C0B400229ADC /* WebService.swift in Sources */,
 				9F3D95162BEA81B400F8C1EF /* CustomProgressBar.swift in Sources */,
@@ -380,11 +390,13 @@
 				9FD791932BD0153C00E64DC7 /* Tips.swift in Sources */,
 				9F36C7E52C11461200EE902D /* SearchBar.swift in Sources */,
 				9F5A81682AF00496005B6921 /* ContentView.swift in Sources */,
+				B66E2AE82E27003900F4BD1E /* TrayConfig.swift in Sources */,
 				9FEDEBC32BCB7BE300117289 /* OldWebService.swift in Sources */,
 				9F5E4D1D2AF04816005223A1 /* TextAlignment.swift in Sources */,
 				9FA1D2D62BA89E25006E69BC /* Extensions.swift in Sources */,
 				9F7430DD2BD82813000C05D7 /* DropDownView.swift in Sources */,
 				9F27E6ED2BF2C0DF00229ADC /* APIModel.swift in Sources */,
+				B66E2AEA2E2701E700F4BD1E /* SettingsView.swift in Sources */,
 				9FB789D62B9784EB0083AE9A /* BookSamples.swift in Sources */,
 				9F9727132BE29A0B00D4982C /* BookGoalModel.swift in Sources */,
 				9F5A81662AF00496005B6921 /* BookmarkedApp.swift in Sources */,
@@ -533,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookmarked/Preview Content\"";
 				DEVELOPMENT_TEAM = GMMGZ4UUAF;
 				ENABLE_PREVIEWS = YES;
@@ -552,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = zf.codes.Bookmarked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -567,7 +579,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.6;
 				DEVELOPMENT_ASSET_PATHS = "\"Bookmarked/Preview Content\"";
 				DEVELOPMENT_TEAM = GMMGZ4UUAF;
 				ENABLE_PREVIEWS = YES;
@@ -586,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = zf.codes.Bookmarked;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
